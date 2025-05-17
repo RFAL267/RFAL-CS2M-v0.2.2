@@ -21,8 +21,8 @@ const PageProfile = () => {
     <section className="page_profile">
       {/* header */}
         <div className="header">
-          <img className="user_img" src={user ? imgProfile : user?.avatar} />
-          <p className="user_name">{user ? "User Name": user?.name}</p>
+          <img className="user_img" src={user ? user.avatar: imgProfile } />
+          <p className="user_name">{user ?  user.name : "User Name"}</p>
           <div className="user_menu">
             {/* get skin */}
             <button onClick={()=>{navigate("/withdraw")}}>
