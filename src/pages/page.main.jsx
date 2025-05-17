@@ -23,10 +23,6 @@ const PageMain = () => {
   return (
     <section className="page_main">
       <div className="coin_info">
-        {/*  */}
-        <h1>Telegram ID: {user ? user.id : ""}</h1>
-        <img src={user ? user.avatar : ""} />
-        {/*  */}
         <button className="coin_btn" onClick={onCoinClick}>
           <IconCoin />
         </button>
