@@ -10,15 +10,19 @@ import IconCoin from "../components/icons/icon.coin";
 import NavBar from '../components/navbar'
 import { useNavigate } from "react-router-dom";
 // -
+//  UserWebApp Context
+import { useUser } from "../context/UserContext";
+// -
 const PageProfile = () => {
+  const {user} = useUser();
   const navigate = useNavigate();
    const items = Array.from({ length: 9 });
   return (
     <section className="page_profile">
       {/* header */}
         <div className="header">
-          <img className="user_img" src={imgProfile} />
-          <p className="user_name">User Name</p>
+          <img className="user_img" src={user ? imgProfile : user?.avatar} />
+          <p className="user_name">{user ? "User Name": user?.name}</p>
           <div className="user_menu">
             {/* get skin */}
             <button onClick={()=>{navigate("/withdraw")}}>
